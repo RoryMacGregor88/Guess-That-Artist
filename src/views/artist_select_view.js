@@ -2,7 +2,7 @@ const PubSub = require('../helpers/pub_sub.js')
 const RequestHelper = require('../helpers/request_helper.js');
 
 const ArtistSelectView = function () {
-  // this.artistSquares = null;
+  this.artistSquares = null;
 };
 
 ArtistSelectView.prototype.bindEvents = function () {
@@ -15,7 +15,7 @@ ArtistSelectView.prototype.bindEvents = function () {
 
     this.populatePicture(winningObject);
 
-    artistH3s = document.querySelectorAll('h3');
+    artistH3s = document.querySelectorAll('.squares');
     for (var i = 0; i < artistH3s.length; i++) {
       artistH3s[i].addEventListener('click', function() {
         if (this.textContent == winningBox) {
@@ -26,6 +26,18 @@ ArtistSelectView.prototype.bindEvents = function () {
       });
     }
   })
+  const easyButton = document.querySelector('#easy');
+  easyButton.addEventListener('click', function() {
+    this.difficultySetting(9);
+  });
+  const normalButton = document.querySelector('#normal');
+  normalButton.addEventListener('click', function() {
+    this.difficultySetting(6);
+  });
+  const hardButton = document.querySelector('#hard');
+  hardButton.addEventListener('click', function() {
+    this.difficultySetting(3);
+  });
 };
 
 ArtistSelectView.prototype.multiplyBoxes = function (num, array) {
@@ -48,7 +60,7 @@ ArtistSelectView.prototype.generateBox = function(array) {
   const selectBoxesDiv = document.querySelector('#artist-select-boxes');
   const artistName = document.createElement('h3');
   const artistSquare = document.createElement('div');
-  artistSquare.classList.add('sqauares');
+  artistSquare.classList.add('squares');
   artistName.textContent = artist.name;
 
   artistSquare.appendChild(artistName);
@@ -56,13 +68,10 @@ ArtistSelectView.prototype.generateBox = function(array) {
   return artistId;
 }
 
-ArtistSelectView.prototype.reset = function() {
-  const selectBoxesDiv = document.querySelector('#artist-select-boxes');
-  const resetButton = document.querySelector('#reset');
-  resetButton.addEventListener('click', () => {
-    selectBoxesDiv.innerHTML = '';
-  });
-};
+// ArtistSelectView.prototype.difficultySetting = function(num) {
+//   this.boxes = this.multiplyBoxes(num, this.artists);
+//   this.winningBox = this.winningBox(boxes);
+// };
 
 ArtistSelectView.prototype.populatePicture = function (object) {
   const artistPictureDiv = document.querySelector("#artist-picture");

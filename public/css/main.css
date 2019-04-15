@@ -1,6 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Oxygen;
+}
+
+html {
+  background-color: #ffbdbd;
 }
 
 .banner {
@@ -8,15 +13,20 @@ body {
   justify-content: center;
   height: 5em;
   margin: 0;
-  background-color: blue;
+  background-color: #ffbdbd;
 }
 
 h1 {
   display: flex;
   align-items: center;
+  font-size: 3em;
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+button {
+  font-size: 1.5em;
 }
 
 #section {
@@ -29,36 +39,50 @@ h1 {
 #buttons-div {
   display: flex;
   justify-content: center;
-  background-color: red;
+  background-color: #f1cbff;
 }
 
 .button {
   border: none;
   height: 100%;
-  background-color: blue
+  background-color: #c9c9ff;
 }
 
 .paragraph {
   display: flex;
   justify-content: center;
-  background-color: green;
-  font-size: 2em;
+  background-color: #e1f7d5;
+  font-size: 1.5em;
 }
 
 #artist-picture {
   display: flex;
   justify-content: center;
-  background-color: pink
+  background-color: #ffbdbd;
 }
 
 #artist-select-boxes {
   display: flex;
   justify-content: space-around;
-  background-color: orange
+  background-color: #f1cbff;
+}
+
+p.paragraph {
+  height:1em;
+  align-items: center;
+  background-color: #ffbdbd;
+  margin: 0.5;
+}
+
+img {
+  height: 25em;
+  width: auto;
 }
 
 .squares {
-  background-color: green;
+  background-color: #e1f7d5;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 #message {
